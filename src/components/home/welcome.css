@@ -1,0 +1,29 @@
+.welcome {
+    background-color: rgb(12 24 86);
+    background-image: url("../../assets/images/blue-discus-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding:  calc(clamp(75px, 10vw,215px)) 0;
+    position: relative;
+    z-index: 1;
+
+    &:before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        display: block;
+        background-color: rgba(19, 15, 94, 0.5);
+        z-index: -1;
+    }
+
+    & .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    & h1 {
+        margin-bottom: 60px;
+    }
+}

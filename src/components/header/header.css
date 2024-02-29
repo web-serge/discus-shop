@@ -1,0 +1,44 @@
+header {
+    padding: 5px 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    & img {
+        width: clamp(90px, 10vw,150px);
+
+    }
+    & div.container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    & ul {
+        display: flex;
+        gap: 15px;
+        font-size: 25px;
+
+        & .cart-icon {
+            position: relative;
+
+            & span {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 10px;
+                height: 10px;
+                top: -11px;
+                z-index: -1;
+                right: 0;
+                color: white;
+                background: #efc12f;
+                border-radius: 50%;
+                padding: 10px;
+                font-size: 15px;
+                font-family: "Leckerli One", sans-serif;
+            }
+        }
+    }
+}

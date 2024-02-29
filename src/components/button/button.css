@@ -1,0 +1,64 @@
+button {
+    padding: 10px 15px;
+    font-family: inherit;
+    background: #EFC12FFF;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 300ms;
+
+    &:disabled {
+        background: grey;
+        opacity: 80%;
+        pointer-events: none;
+    }
+
+    &.big {
+        font-size: 15px;
+        transition: 300ms;
+        font-weight: 600;
+    }
+    &.big:hover  {
+      color: crimson;
+    }
+
+    & span + i {
+        margin-left: 10px;
+    }
+
+    &.circle {
+        border-radius: 50%;
+        background: white;
+        font-size: 20px;
+        aspect-ratio: 1/1;
+        padding: 10px;
+        color: grey;
+
+        & i {
+            opacity: 1;
+        }
+
+        &:hover {
+            background: lightgray;
+            color: crimson;
+        }
+    }
+}
+
+.button-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    & button {
+        opacity: 0.8;
+    }
+
+    & button.active {
+       background: #2bbef9;
+    }
+}

@@ -1,0 +1,104 @@
+.card {
+    max-width: 350px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border: 1px solid #c2c2d3;
+    border-radius: 5px;
+    position: relative;
+    background-color: white;
+    text-align: left;
+
+    & .discount {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 5px 10px 5px 5px;
+        margin: 5px;
+        border-radius: 5px;
+        background: #2bbef9;
+        color: white;
+        clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+        z-index: 5;
+    }
+
+    & .image-container {
+        overflow: hidden;
+    }
+
+    & img {
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        transition: 300ms;
+    }
+
+    & .card-info {
+        padding-left: 5px;
+        padding-bottom: 5px;
+    }
+
+    & h2 {
+        color: #202435;
+        font-size: 18px;
+        white-space: nowrap;
+    }
+
+    & small {
+        font-weight: bold;
+        color: green;
+        text-transform: uppercase;
+        font-size: 11px;
+        word-spacing: 2px;
+
+        &.out-of-stock {
+            color: crimson;
+        }
+    }
+
+    & .price {
+        font-weight: 600;
+        color: crimson;
+        letter-spacing: 1px;
+        &.old {
+            color: lightgray;
+            text-decoration: line-through;
+            margin-right: 10px;
+            font-size: 15px;
+        }
+    }
+
+    &:hover img {
+        transform: scale(1.1);
+    }
+
+    & .add-to-cart {
+        position: absolute;
+        right: 10px;
+        bottom: 5px;
+        /*transform: translate(-50%, 100%);*/
+        transition: 300ms;
+    }
+
+    &:hover .add-to-cart {
+
+    }
+
+    & .hide-buttons {
+        transition: 300ms;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        transform: translateX(100px);
+    }
+
+    &:hover .hide-buttons {
+        transform: translateX(0);
+    }
+
+}
