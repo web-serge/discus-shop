@@ -1,4 +1,4 @@
-button {
+.button {
     padding: 10px 15px;
     font-family: inherit;
     background: #EFC12FFF;
@@ -42,7 +42,7 @@ button {
 
         &:hover {
             background: lightgray;
-            color: crimson;
+            color: green;
         }
     }
 }

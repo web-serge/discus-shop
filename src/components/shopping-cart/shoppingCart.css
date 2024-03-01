@@ -1,22 +1,24 @@
 .cart-container {
-    position: absolute;
-    inset: 0;
-    background: rgba(34, 34, 34, 0.35);
-    z-index: 100;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
     display: flex;
     justify-content: flex-end;
     height: 100%;
+    animation: revealFromRight .5s ease-in-out;
 }
 
 .shopping-cart {
     background: white;
-    width: 280px;
+    /*width: 500px;*/
     border-left: 1px solid lightgrey;
     border-left: 1px solid grey;;
     position: relative;
     padding: 20px 0;
 
-    & > button {
+    & > .toggle {
         position: absolute;
         left: -20px;
         top: 20px;
@@ -27,6 +29,11 @@
         &:hover {
             background: white;
         }
+    }
+
+    & .pay-button {
+        color: black;
+        margin-left: 10px;
     }
 
     & .cart-items {
@@ -64,12 +71,40 @@
     }
 }
 
-.counter {
-    display: flex;
-    gap: 5px;
-    align-items: center;
+@keyframes revealFromRight {
+    from {opacity: 0} to {opacity: 100%}
+}
 
-    & button:disabled {
-        opacity: .5;
+table.iksweb{
+    border-collapse:collapse;
+    margin: 30px 0;
+
+    & img {
+      width: 50px;
+        aspect-ratio: 1/1;
     }
+}
+table.iksweb,table.iksweb td, table.iksweb th {
+    border: 1px solid #595959;
+}
+table.iksweb td,table.iksweb th {
+    padding: 3px;
+    /*width: 30px;*/
+    /*height: 35px;*/
+    &.counter {
+        & b {
+            margin: 0 3px;
+        }
+        & button {
+            font-size: 10px;
+            padding: 5px;
+        }
+    }
+
+}
+table.iksweb th {
+    background: #347c99;
+    color: #fff;
+    font-weight: normal;
+    white-space: nowrap;
 }

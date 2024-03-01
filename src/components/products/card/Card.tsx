@@ -3,6 +3,7 @@ import './card.css'
 import {Rating} from './rating/Rating';
 import {Button} from '../../button/Button';
 import {ShopCart} from '../../../App';
+import {getNewPrice} from '../../../store/data';
 export type CategoryType = 'selective' | 'wild' | 'all'
 export type ProductItemType = {
     src: string
@@ -13,21 +14,16 @@ export type ProductItemType = {
     discount: null | number
     category: CategoryType
     id: number
-    addToCart: (id:number)=>void
-    shoppingCart: ShopCart[]
-}
+
+} & { addToCart: (id: number) => void } & { cartItems: ShopCart[] }
 export const Card = (props: ProductItemType) => {
-    const {src, productName, ifStock, rating, price, discount, id, addToCart,shoppingCart, ...restProps} = props
+    const {src, productName, ifStock, rating, price, discount, id, addToCart,cartItems, ...restProps} = props
 
-    function getNewPrice() {
-        if (discount) return Math.ceil(price * (1 - discount / 100))
-    }
-
-    function onClickAddCartHandler() {
+     function onClickAddCartHandler() {
         addToCart(id)
     }
 
-    const r = shoppingCart.find(el => el.id === id)
+    const ifAdded = cartItems.find(el => el.id === id)
     return (
         <div className='card'>
             {discount && <span className='discount'>{discount}%</span>}
@@ -44,7 +40,7 @@ export const Card = (props: ProductItemType) => {
                 </div>
                 {discount && <div>
                     <span className='price old'>${price}</span>
-                    <span className='price'>${getNewPrice()}</span>
+                    <span className='price'>${getNewPrice(discount, price)}</span>
                 </div>}
                 {!discount && <div>
                     <span className='price'>${price}</span>
@@ -55,11 +51,10 @@ export const Card = (props: ProductItemType) => {
                 <Button onClick={()=>{}} icon='fa-duotone fa-eye'/>
             </div>
             <Button onClick={onClickAddCartHandler}
-                    disabled={!ifStock || !!r}
-                    // name={'Add to cart'}
-                    name={r ? 'In cart' : 'Add to cart'}
-                    className='add-to-cart'
-                    icon='fa-duotone fa-cart-plus'/>
+                    disabled={!ifStock}
+                    name={ifAdded ? 'Remove' : !ifStock ? 'Not available' : 'Add to cart'}
+                    className={ifAdded ? 'add-to-cart red' : 'add-to-cart'}
+                    icon={ifAdded ? 'fa-duotone fa-cart-minus' : !ifStock ? 'fa-duotone fa-cart-circle-xmark' : 'fa-duotone fa-cart-plus'}/>
         </div>
     );
 };

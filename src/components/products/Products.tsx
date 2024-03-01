@@ -7,24 +7,37 @@ import {ShopCart} from '../../App';
 
 type ProductsType = {
     addToCart: (id:number)=>void
-    shoppingCart: ShopCart[]
+    cartItems: ShopCart[]
 }
-export const Products = ({addToCart, shoppingCart}:ProductsType) => {
-    const [discus, setDiscus] = useState<DataType[]>(data)
-    const [filter, setFilter] = useState<CategoryType>('all')
+// type SortType = 'name' | 'price'
+export const Products = ({addToCart, cartItems}:ProductsType) => {
+    let catalogData = data;
 
+    // const [discus, setDiscus] = useState<DataType[]>(data)
+    const [filter, setFilter] = useState<CategoryType>('all')
     function getFilterDiscus() {
-        let filteredDiscus = discus
         if (filter !== 'all') {
-            return filteredDiscus.filter(el => el.category === filter)
-        } else return filteredDiscus
+            return catalogData.filter(el => el.category === filter)
+        } else return catalogData
     }
-    const discusMap = getFilterDiscus().map(el => <Card {...el} addToCart={addToCart} key={el.id} shoppingCart={shoppingCart}/>)
+
+    // SORT
+/*    const [sort, setSort] = useState<SortType>('price')
+    function sortCatalog() {
+        if (sort === 'price') {
+            return catalogData.sort((a,b) => a.price - b.price)
+        }
+        if (sort === 'name') {
+            return catalogData.sort((a,b) => a.productName.localeCompare(b.productName))
+        }
+
+    }*/
+    const discusMap = getFilterDiscus().map(el => <Card {...el} addToCart={addToCart} key={el.id} cartItems={cartItems}/>)
 
     return (
         <section className='catalog'>
             <div className='container'>
-                <h3>Select a category</h3>
+                <h3 id='shop'>Select a category</h3>
                 <div className='button-group'>
                     <Button onClick={() => setFilter('all')} name='All' className={filter === 'all' ? 'active' : ''}/>
                     <Button onClick={() => setFilter('selective')} name='Selective'
@@ -32,6 +45,12 @@ export const Products = ({addToCart, shoppingCart}:ProductsType) => {
                     <Button onClick={() => setFilter('wild')} name='Wild'
                             className={filter === 'wild' ? 'active' : ''}/>
                 </div>
+                <div>
+    {/*                <select name="select" value={sort}>
+                        <option value="$">По цене</option>
+                        <option value="name">По имени</option>
+                    </select>*/}
+  </div>
                 <div className='grid'>{discusMap}</div>
             </div>
         </section>

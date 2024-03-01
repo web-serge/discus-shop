@@ -79,6 +79,14 @@
         bottom: 5px;
         /*transform: translate(-50%, 100%);*/
         transition: 300ms;
+
+        &.red {
+            background: crimson;
+        }
+        &.red:hover {
+            border: 1px solid crimson;
+            background: white;
+        }
     }
 
     &:hover .add-to-cart {

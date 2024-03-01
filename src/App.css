@@ -19,7 +19,9 @@
     border: 3px solid lightgrey;
     border-radius: 1.6rem;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 img {
     display: block;
     width: 100%;

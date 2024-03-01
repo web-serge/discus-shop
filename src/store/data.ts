@@ -51,6 +51,16 @@ export const data: DataType[] = [
         id: 4
     },
     {
+        productName: "Golden Lollipop Discus",
+        src: "https://discuscom.b-cdn.net/wp-content/uploads/sites/11/2019/02/Golden20Lollipop205.0202.jpg",
+        ifStock: true,
+        rating: 3.1,
+        price: 259,
+        discount: null,
+        category: 'selective',
+        id: 5
+    },
+    {
         productName: "Wild Mangal Discus",
         src: "https://discuscom.b-cdn.net/wp-content/uploads/sites/11/2019/02/Mangal-2.jpg",
         ifStock: true,
@@ -58,7 +68,7 @@ export const data: DataType[] = [
         price: 391,
         discount: null,
         category: 'wild',
-        id: 5
+        id: 6
     },
     {
         productName: "F1 Ica Red Discus",
@@ -68,6 +78,31 @@ export const data: DataType[] = [
         price: 159,
         discount: 3,
         category: 'wild',
-        id: 6
+        id: 7
+    },
+    {
+        productName: "Wild Brazilian Blue Heckel Discus",
+        src: "https://discuscom.b-cdn.net/wp-content/uploads/sites/11/2019/02/38473807_2253715281335114_3975187301272649728_n.jpg",
+        ifStock: true,
+        rating: 3.1,
+        price: 159,
+        discount: 3,
+        category: 'wild',
+        id: 8
+    },
+    {
+        productName: "Royal Heckel Cross Discus",
+        src: "https://discuscom.b-cdn.net/wp-content/uploads/sites/11/2019/06/heckel_royal.jpg",
+        ifStock: true,
+        rating: 3.1,
+        price: 159,
+        discount: 3,
+        category: 'selective',
+        id: 9
     },
 ]
+
+export function getNewPrice(discount: number | null, price: number) {
+    if (discount !== null) return Math.ceil(price * (1 - discount / 100))
+    return price
+}

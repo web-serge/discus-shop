@@ -7,7 +7,8 @@ export const Welcome = () => {
             <div className='container'>
                 <span className='leckerli-one-regular'>Welcome to Discus.com</span>
                 <h1>Quolity Discus <br/> fish for sale</h1>
-                <Button name='Shop now' onClick={()=>{}} />
+                <a href='#shop'
+                   className='button'>Shop now <i className="fa-regular fa-arrow-down"></i></a>
             </div>
         </section>
     )

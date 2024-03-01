@@ -5,6 +5,7 @@ header {
     right: 0;
     top: 0;
     z-index: 10;
+    background: linear-gradient(45deg, transparent, black);;
     & img {
         width: clamp(90px, 10vw,150px);
 
