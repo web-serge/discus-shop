@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/discus-shop/static/css/main.448ff7fd.css",
-    "main.js": "/discus-shop/static/js/main.aae4b616.js",
+    "main.css": "/discus-shop/static/css/main.424a5dc7.css",
+    "main.js": "/discus-shop/static/js/main.3708093f.js",
     "static/js/453.c2c04ef4.chunk.js": "/discus-shop/static/js/453.c2c04ef4.chunk.js",
     "static/media/blue-discus-bg.jpg": "/discus-shop/static/media/blue-discus-bg.afbe56a89798f012e979.jpg",
     "index.html": "/discus-shop/index.html",
-    "main.448ff7fd.css.map": "/discus-shop/static/css/main.448ff7fd.css.map",
-    "main.aae4b616.js.map": "/discus-shop/static/js/main.aae4b616.js.map",
+    "main.424a5dc7.css.map": "/discus-shop/static/css/main.424a5dc7.css.map",
+    "main.3708093f.js.map": "/discus-shop/static/js/main.3708093f.js.map",
     "453.c2c04ef4.chunk.js.map": "/discus-shop/static/js/453.c2c04ef4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.448ff7fd.css",
-    "static/js/main.aae4b616.js"
+    "static/css/main.424a5dc7.css",
+    "static/js/main.3708093f.js"
   ]
 }
